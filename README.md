@@ -70,7 +70,7 @@ Then drag & drop your backup folder or select it using the file picker.
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/vivo-backup-decryptor.git
+git clone https://github.com/Martlnez/vivo-backup-decryptor.git
 cd vivo-backup-decryptor
 ```
 
@@ -305,6 +305,6 @@ This tool is for educational and personal data recovery purposes only. Users are
 
 **Made with ❤️ for data recovery**
 
-[Report Bug](https://github.com/yourusername/vivo-backup-decryptor/issues) · [Request Feature](https://github.com/yourusername/vivo-backup-decryptor/issues)
+[Report Bug](https://github.com/Martlnez/vivo-backup-decryptor/issues) · [Request Feature](https://github.com/Martlnez/vivo-backup-decryptor/issues)
 
 </div>
