@@ -213,7 +213,7 @@ Examples:
 
     # Parse file index
     db_path = os.path.join(backup_dir, 'db')
-    hash_to_path =
+    hash_to_path = {}
 
     if not args.keep_hash_names:
         hash_to_path = parse_file_index(db_path)
