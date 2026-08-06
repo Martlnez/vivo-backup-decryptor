@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vivo Backup Decryptor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1>🔓 vivo Backup Decryptor</h1>
+                <p class="subtitle">Decrypt your vivo/iQOO PhoneClone backup files</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section" id="uploadSection">
+                <div class="upload-card">
+                    <div class="upload-icon">📁</div>
+                    <h2>Upload Backup Folder</h2>
+                    <p>Drag and drop your backup folder here, or click to browse</p>
+
+                    <div class="drop-zone" id="dropZone">
+                        <input type="file" id="fileInput" webkitdirectory directory multiple style="display: none;">
+                        <div class="drop-zone-content">
+                            <svg class="upload-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                            </svg>
+                            <p class="drop-text">Drop backup folder here</p>
+                            <button class="btn btn-primary" id="browseBtn">Browse Files</button>
+                        </div>
+                    </div>
+
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <div class="info-row">
+                            <span class="info-label">Selected:</span>
+                            <span class="info-value" id="fileCount">0 files</span>
+                        </div>
+                        <button class="btn btn-success" id="decryptBtn">Start Decryption</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section" id="progressSection" style="display: none;">
+                <div class="progress-card">
+                    <h3>Decrypting Files...</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Initializing...</p>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-card">
+                    <div class="results-header">
+                        <h2>✅ Decryption Complete</h2>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="statSuccess">0</div>
+                            <div class="stat-label">Success</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="statFailed">0</div>
+                            <div class="stat-label">Failed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="statTotal">0</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                    </div>
+
+                    <div class="backup-info" id="backupInfo"></div>
+
+                    <div class="file-list" id="fileList"></div>
+
+                    <div class="actions">
+                        <button class="btn btn-success btn-lg" id="downloadBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                            </svg>
+                            Download Decrypted Files
+                        </button>
+                        <button class="btn btn-secondary" id="resetBtn">Decrypt Another Backup</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Info Section -->
+            <section class="info-section">
+                <div class="info-card">
+                    <h3>ℹ️ How to Use</h3>
+                    <ol class="steps-list">
+                        <li>Locate your vivo/iQOO backup folder on your computer</li>
+                        <li>Drag & drop the folder or click "Browse Files" to select it</li>
+                        <li>Click "Start Decryption" and wait for processing</li>
+                        <li>Download your decrypted files as a ZIP archive</li>
+                    </ol>
+                </div>
+
+                <div class="info-card">
+                    <h3>📱 Supported Devices</h3>
+                    <ul class="device-list">
+                        <li>vivo (X, S, Y series)</li>
+                        <li>iQOO (Neo, Z series)</li>
+                        <li>OPPO (some models)</li>
+                        <li>Realme (some models)</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🔐 Security & Privacy</h3>
+                    <ul class="security-list">
+                        <li>All processing happens locally on your computer</li>
+                        <li>No data is uploaded to external servers</li>
+                        <li>Files are automatically deleted after download</li>
+                        <li>Open source - audit the code yourself</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Made with ❤️ for data recovery | <a href="https://github.com/yourusername/vivo-backup-decryptor" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
